@@ -1,0 +1,42 @@
+# NanoOWL FT Requirements
+# Tested on Jetson Orin Nano with JetPack 6.2.1, Python 3.10.12
+
+# Core ML dependencies
+transformers>=4.57.0  # Tested: 4.57.3
+tokenizers
+numpy<2  # Tested: 1.26.4 (Important: NumPy 2.x not compatible with PyTorch 2.8.0)
+pillow>=10.0.0  # Tested: 12.0.0
+
+# Web server
+flask>=3.0.0  # Tested: 3.1.2
+
+# Computer vision
+opencv-python>=4.6.0  # Tested: 4.6.0
+
+# Testing
+pytest
+pytest-cov
+
+# CLIP model dependencies
+ftfy
+regex
+
+# Visualization
+matplotlib
+
+# PyTorch for Jetson (install separately)
+# torch==2.8.0 (with CUDA 12.6 support)
+# torchvision==0.23.0
+# Installation: https://docs.nvidia.com/deeplearning/frameworks/install-pytorch-jetson-platform/
+
+# CLIP (install from GitHub)
+# git+https://github.com/openai/CLIP.git
+
+# torch2trt for TensorRT optimization (install separately)
+# torch2trt==0.5.0
+# Installation: git clone https://github.com/NVIDIA-AI-IOT/torch2trt && cd torch2trt && python3 setup.py install
+
+# System requirements:
+# - JetPack 6.2.1 (includes CUDA 12.6, TensorRT 10.3.0)
+# - NVIDIA Jetson Orin (Nano/NX/AGX)
+

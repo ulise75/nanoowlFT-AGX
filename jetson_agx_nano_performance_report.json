@@ -1,0 +1,457 @@
+{
+  "device": "Jetson AGX Nano",
+  "duration_seconds": 300,
+  "sample_count": 30,
+  "samples": [
+    {
+      "timestamp": "2026-01-01 10:54:09",
+      "elapsed_seconds": 3.8623809814453125e-05,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.781,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:54:19",
+      "elapsed_seconds": 10.037055253982544,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 42.968,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:54:29",
+      "elapsed_seconds": 20.071598052978516,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.5,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:54:39",
+      "elapsed_seconds": 30.099761247634888,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.218,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:54:50",
+      "elapsed_seconds": 40.133694648742676,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.25,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:55:00",
+      "elapsed_seconds": 50.164677143096924,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.5,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:55:10",
+      "elapsed_seconds": 60.201648473739624,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.187,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:55:20",
+      "elapsed_seconds": 70.23325276374817,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.218,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:55:30",
+      "elapsed_seconds": 80.26568722724915,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.062,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:55:40",
+      "elapsed_seconds": 90.29766535758972,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.343,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:55:50",
+      "elapsed_seconds": 100.33108043670654,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.312,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:56:00",
+      "elapsed_seconds": 110.36565017700195,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.812,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:56:10",
+      "elapsed_seconds": 120.40217113494873,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.343,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:56:20",
+      "elapsed_seconds": 130.43768739700317,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.343,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:56:30",
+      "elapsed_seconds": 140.4697015285492,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.0,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:56:40",
+      "elapsed_seconds": 150.49805068969727,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.312,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:56:50",
+      "elapsed_seconds": 160.5314164161682,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.156,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:57:00",
+      "elapsed_seconds": 170.56665515899658,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.187,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:57:10",
+      "elapsed_seconds": 180.60096406936646,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 42.968,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:57:20",
+      "elapsed_seconds": 190.6360890865326,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.25,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:57:30",
+      "elapsed_seconds": 200.67062091827393,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 42.937,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:57:40",
+      "elapsed_seconds": 210.7070198059082,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.031,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:57:50",
+      "elapsed_seconds": 220.7416877746582,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 42.906,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:58:00",
+      "elapsed_seconds": 230.7736611366272,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.093,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:58:10",
+      "elapsed_seconds": 240.81094360351562,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.0,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:58:20",
+      "elapsed_seconds": 250.84626507759094,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.093,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:58:30",
+      "elapsed_seconds": 260.8816888332367,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 42.812,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:58:40",
+      "elapsed_seconds": 270.91368889808655,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.0,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:58:50",
+      "elapsed_seconds": 280.94564867019653,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.25,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    },
+    {
+      "timestamp": "2026-01-01 10:59:00",
+      "elapsed_seconds": 290.9776954650879,
+      "device": "Jetson AGX Nano",
+      "cpu_temp_c": 43.25,
+      "fps": null,
+      "detection_count": null,
+      "inference_time_ms": null,
+      "detected_objects": [
+        "person",
+        "phone",
+        "bottle"
+      ],
+      "lines_parsed": 56
+    }
+  ]
+}

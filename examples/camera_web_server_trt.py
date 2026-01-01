@@ -10,11 +10,109 @@ import os
 import gc
 import torch
 import threading
+import csv
+import psutil
+from datetime import datetime
 from flask import Flask, Response, render_template_string, request, jsonify
 from nanoowl.owl_predictor import OwlPredictor
 from nanoowl.owl_drawing import draw_owl_output
 
 app = Flask(__name__)
+
+# Performance logging
+performance_log_file = None
+performance_log_writer = None
+performance_log_lock = threading.Lock()
+
+def init_performance_log():
+    """Initialize performance log file with timestamp"""
+    global performance_log_file, performance_log_writer
+    
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_filename = f"/tmp/inference_performance_{timestamp}.csv"
+    
+    performance_log_file = open(log_filename, 'w', newline='', buffering=8192)
+    performance_log_writer = csv.writer(performance_log_file)
+    
+    # Write header
+    performance_log_writer.writerow([
+        'timestamp', 'fps', 'inference_ms', 'objects_detected',
+        'cpu_percent', 'gpu_percent', 'cpu_temp_c', 'gpu_temp_c', 'memory_mb'
+    ])
+    performance_log_file.flush()
+    
+    print(f"📊 Performance logging to: {log_filename}")
+    return log_filename
+
+def get_jetson_stats():
+    """Get Jetson CPU/GPU usage and temperatures efficiently"""
+    try:
+        # CPU usage
+        cpu_percent = psutil.cpu_percent(interval=0)
+        
+        # Memory
+        mem = psutil.virtual_memory()
+        memory_mb = mem.used / (1024 * 1024)
+        
+        # GPU usage from tegrastats (lightweight)
+        gpu_percent = 0
+        try:
+            with open('/sys/devices/gpu.0/load', 'r') as f:
+                gpu_percent = int(f.read().strip()) / 10
+        except:
+            pass
+        
+        # Temperatures
+        cpu_temp = gpu_temp = 0
+        try:
+            # CPU temp
+            with open('/sys/devices/virtual/thermal/thermal_zone0/temp', 'r') as f:
+                cpu_temp = int(f.read().strip()) / 1000
+        except:
+            pass
+        
+        try:
+            # GPU temp
+            with open('/sys/devices/virtual/thermal/thermal_zone1/temp', 'r') as f:
+                gpu_temp = int(f.read().strip()) / 1000
+        except:
+            pass
+        
+        return cpu_percent, gpu_percent, cpu_temp, gpu_temp, memory_mb
+    except:
+        return 0, 0, 0, 0, 0
+
+def log_performance(fps, inference_ms, num_objects):
+    """Log performance metrics asynchronously"""
+    if performance_log_writer is None:
+        return
+    
+    # Get system stats (cached to avoid overhead)
+    cpu_percent, gpu_percent, cpu_temp, gpu_temp, memory_mb = get_jetson_stats()
+    
+    # Write to log (non-blocking with lock)
+    try:
+        with performance_log_lock:
+            performance_log_writer.writerow([
+                datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3],
+                f"{fps:.2f}",
+                f"{inference_ms:.2f}",
+                num_objects,
+                f"{cpu_percent:.1f}",
+                f"{gpu_percent:.1f}",
+                f"{cpu_temp:.1f}",
+                f"{gpu_temp:.1f}",
+                f"{memory_mb:.1f}"
+            ])
+            # Flush every 10 writes for efficiency
+            if hasattr(log_performance, 'counter'):
+                log_performance.counter += 1
+                if log_performance.counter % 10 == 0:
+                    performance_log_file.flush()
+            else:
+                log_performance.counter = 1
+    except:
+        pass
 
 class ThreadedCamera:
     """Thread-based camera reader to eliminate buffering lag"""
@@ -458,6 +556,9 @@ def generate_frames():
         stats['detections'] = len(output.labels)
         stats['detected_labels'] = [detection_text[label] for label in output.labels]
         
+        # Log performance metrics (efficient, non-blocking)
+        log_performance(fps_display, inference_time * 1000, len(output.labels))
+        
         # Add info overlay (simplified for speed)
         info_text = f"FPS: {fps_display:.1f} | Inference: {inference_time*1000:.0f}ms | Det: {len(output.labels)}"
         cv2.putText(output_frame, info_text, (10, 25), 
@@ -620,6 +721,9 @@ def main():
         print(f"Error initializing model: {e}")
         return
     
+    # Initialize performance logging
+    log_file = init_performance_log()
+    
     # Initialize camera
     print(f"Opening camera {args.camera}...")
     if not initialize_camera():
@@ -645,10 +749,17 @@ def main():
     except KeyboardInterrupt:
         print("\n\nShutting down...")
     finally:
+        # Cleanup
         if camera:
             camera.release()
         if args.device == 'cuda':
             torch.cuda.empty_cache()
+        
+        # Close performance log
+        if performance_log_file:
+            performance_log_file.close()
+            print(f"📊 Performance log saved: {log_file}")
+        
         print("Server stopped.")
 
 if __name__ == '__main__':
